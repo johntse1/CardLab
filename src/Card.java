@@ -25,9 +25,5 @@ public class Card
     {
         return (this.pointValue == otherCard.pointValue);
     }
-    public String toString()
-    {
-
-    }
 }
 
