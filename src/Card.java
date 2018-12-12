@@ -25,5 +25,11 @@ public class Card
     {
         return (this.pointValue == otherCard.pointValue);
     }
+    public String toString()
+    {
+        String temp;
+        temp = this.rank + this.suit + this.pointValue;
+        return temp;
+    }
 }
 

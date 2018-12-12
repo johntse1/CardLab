@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Deck
@@ -10,20 +9,44 @@ public class Deck
        unDealt = new ArrayList<Card>();
        for(int i = 0; i < rank.length; i++)
        {
-           for(int i = 0; i < suit.length; i++)
+           for(int j = 0; j < suit.length; j++)
            {
-               for(int i = 0; i < pointValue.length; i++)
-               {
-                   Card unsorted = new Card(rank[i], suit[i], pointValue[i]);
-               }
+                   Card cardDeck = new Card(rank[i], suit[j], pointValue[i]);
+                    unDealt.add(cardDeck);
            }
        }
    }
-   public static boolean isEmpty()
+   public boolean isEmpty()
    {
-       return
+       return this.size() == 0;
    }
-   public static int size()
+   public int size()
    {
+       return unDealt.size();
+   }
+   public Card deal()
+   {
+       if(unDealt.size()== 0)
+       {
+           return null;
+       }
+       else
+       {
+            Card cardnew = unDealt.get(0);
+            dealt.add(cardnew);
+            unDealt.remove(cardnew);
+            return cardnew;
+       }
+   }
+   public ArrayList<Card> shuffle()
+   {
+       Card temp;
+       for(int i = 0; i <dealt.size(); i++)
+       {
+           temp = dealt.get(i);
+           dealt.remove(temp);
+           unDealt.add(temp);
+       }
+       return unDealt;
    }
 }
