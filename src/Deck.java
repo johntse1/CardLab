@@ -12,7 +12,7 @@ public class Deck
            for(int j = 0; j < suit.length; j++)
            {
                    Card cardDeck = new Card(rank[i], suit[j], pointValue[i]);
-                    unDealt.add(cardDeck);
+                   unDealt.add(cardDeck);
            }
        }
    }
@@ -40,10 +40,12 @@ public class Deck
    }
    public ArrayList<Card> shuffle()
    {
+       int randomspot =0;
        Card temp;
-       for(int i = 0; i <dealt.size(); i++)
+       for(int i = 0; i <dealt.size()-1; i++)
        {
-           temp = dealt.get(i);
+           randomspot = (int) (Math.random()*i);
+           temp = dealt.get(randomspot);
            dealt.remove(temp);
            unDealt.add(temp);
        }
