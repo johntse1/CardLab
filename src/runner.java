@@ -13,5 +13,9 @@ public class runner
             System.out.println(temp);
         }
         deck1.shuffle();
+        for(int i = 0; i<52; i++)
+        {
+            System.out.println(deck1.deal());
+        }
     }
 }

@@ -40,8 +40,13 @@ public class Deck
    }
    public ArrayList<Card> shuffle()
    {
-       int randomspot =0;
+       int randomspot;
        Card temp;
+       while (dealt.size()>0)
+       {
+           unDealt.add(dealt.get(0));
+           dealt.remove(0);
+       }
        for(int i = 0; i <dealt.size()-1; i++)
        {
            randomspot = (int) (Math.random()*i);
